@@ -18,6 +18,7 @@ const Home = () => {
           ? todos.map((obj) => (
               <div>
                 <TodoItem
+                  key={obj.id}
                   id={obj.id}
                   title={obj.title}
                   completed={obj.completed}
