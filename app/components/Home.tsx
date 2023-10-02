@@ -16,15 +16,13 @@ const Home = () => {
       <div className="p-10">
         {todos
           ? todos.map((obj) => (
-              <div>
-                <TodoItem
-                  key={obj.id}
-                  id={obj.id}
-                  title={obj.title}
-                  completed={obj.completed}
-                  priority={obj.priority}
-                />
-              </div>
+              <TodoItem
+                key={obj.id}
+                id={obj.id}
+                title={obj.title}
+                completed={obj.completed}
+                priority={obj.priority}
+              />
             ))
           : null}
       </div>

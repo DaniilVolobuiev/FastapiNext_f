@@ -5,8 +5,8 @@ import { FILTER_OPTIONS } from './constants';
 interface TodoContextWrapperProps {
   children: React.ReactNode;
 }
-
-const TodoContext = React.createContext<ITodoContext>();
+// @ts-ignore
+const TodoContext = React.createContext<ITodoContext>(null);
 
 const TodoContextWrapper = ({ children }: TodoContextWrapperProps) => {
   const [todos, setTodos] = React.useState<ITodo[]>([]);

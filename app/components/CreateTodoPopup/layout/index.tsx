@@ -5,7 +5,7 @@ import { PopupProps } from '..';
 import animationStyles from './animationStyles.module.scss';
 
 import { ANIMATION_TIME, PRIORITY_SELECTION } from './../../../constants/index';
-import { createTodo, getAllTodos } from '@/app/requests';
+import { createTodo } from '@/app/requests';
 import { TodoContext } from '@/app/context';
 import { PriorityType } from '@/app/types';
 import useFetchTodos from '@/app/utils/useFetchData';
@@ -90,7 +90,7 @@ export const Layout: React.FC<PopupProps> = ({ opened, setOpened }) => {
                     className={`px-4 py-2 border rounded ${
                       priority === value ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'
                     }`}
-                    onClick={() => handlePriorityClick(value)}>
+                    onClick={() => handlePriorityClick(value as PriorityType)}>
                     {value}
                   </button>
                 ))}
