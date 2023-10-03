@@ -1,4 +1,5 @@
 import styles from './popup.module.scss';
+import { toast } from 'react-toastify';
 import { CSSTransition } from 'react-transition-group';
 import React from 'react';
 import { PopupProps } from '..';
@@ -49,7 +50,7 @@ export const Layout: React.FC<PopupProps> = ({ opened, setOpened }) => {
       await fetchData(searchString, sort, filter);
       setOpened(false);
     } catch (error) {
-      return;
+      toast('Todo creation failed');
     }
   };
 

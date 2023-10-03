@@ -13,6 +13,7 @@ const TodoContextWrapper = ({ children }: TodoContextWrapperProps) => {
   const [searchString, setSearchString] = React.useState<string>('');
   const [filter, setFilter] = React.useState<boolean | null>(FILTER_OPTIONS.ALL);
   const [sort, setSort] = React.useState<SortOrderEnum>(SortOrderEnum.ASC);
+  const [loading, setLoading] = React.useState<boolean>(false);
 
   const contextValue = {
     todos,
@@ -23,6 +24,8 @@ const TodoContextWrapper = ({ children }: TodoContextWrapperProps) => {
     setFilter,
     sort,
     setSort,
+    loading,
+    setLoading,
   };
 
   return <TodoContext.Provider value={contextValue}>{children}</TodoContext.Provider>;

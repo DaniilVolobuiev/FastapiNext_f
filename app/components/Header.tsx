@@ -1,6 +1,5 @@
 import React from 'react';
 import { TodoContext } from '../context';
-
 import { SortOrderEnum } from '../types';
 import useFetchTodos from '../utils/useFetchData';
 
@@ -55,12 +54,12 @@ const Header: React.FC<HeaderProps> = ({ setOpened }) => {
         <button
           onClick={() => handleFilterChange(false)}
           className={`text-sm  hover:underline ${filter === false ? 'text-yellow-500' : ''}`}>
-          Done
+          Undone
         </button>
         <button
           onClick={() => handleFilterChange(true)}
           className={`text-sm  hover:underline ${filter === true ? 'text-yellow-500' : ''}`}>
-          Undone
+          Done
         </button>
       </div>
       <div className="flex items-center space-x-4">

@@ -4,9 +4,10 @@ import { TodoContext } from '../context';
 import { SortOrderEnum } from '../types';
 
 const useFetchTodos = () => {
-  const { setTodos } = React.useContext(TodoContext);
+  const { setTodos, setLoading } = React.useContext(TodoContext);
 
   const fetchData = async (searchString: string, sort: SortOrderEnum, filter: boolean | null) => {
+    setLoading(true);
     try {
       const data = await getAllTodos({
         search_string: searchString,
@@ -14,9 +15,10 @@ const useFetchTodos = () => {
         completed: filter,
       });
       setTodos(data);
-      console.log('data', data);
     } catch (error) {
       console.error('Error fetching todos:', error);
+    } finally {
+      setLoading(false);
     }
   };
 

@@ -32,4 +32,6 @@ export interface ITodoContext {
   setFilter: React.Dispatch<React.SetStateAction<boolean | null>>;
   sort: SortOrderEnum;
   setSort: React.Dispatch<React.SetStateAction<SortOrderEnum>>;
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
